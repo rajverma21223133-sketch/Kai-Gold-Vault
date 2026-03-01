@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAI STORE - Blood Strike</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a202c; /* Dark gaming theme */
+            color: white;
+            padding: 15px;
+            margin: 0;
+        }
+        h2 {
+            color: #f6ad55;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .item-card {
+            background: #2d3748;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #4a5568;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .item-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .item-name {
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .item-price {
+            color: #cbd5e0;
+            font-size: 0.9rem;
+        }
+        button {
+            background: #48bb78;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:active {
+            background: #38a169;
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🪙 Gold Packages</h2>
+    
+    <div class="item-card">
+        <div class="item-info">
+            <span class="item-name">105 Gold</span>
+            <span class="item-price">3500ks</span>
+        </div>
+        <button onclick="buy('105 Gold', '3500ks')">Buy</button>
+    </div>
+
+    <div class="item-card">
+        <div class="item-info">
+            <span class="item-name">320 Gold</span>
+            <span class="item-price">10000ks</span>
+        </div>
+        <button onclick="buy('320 Gold', '10000ks')">Buy</button>
+    </div>
+
+    <div class="item-card">
+        <div class="item-info">
+            <span class="item-name">540 Gold</span>
+            <span class="item-price">15500ks</span>
+        </div>
+        <button onclick="buy('540 Gold', '15500ks')">Buy</button>
+    </div>
+
+    <div class="item-card">
+        <div class="item-info">
+            <span class="item-name">1100 Gold</span>
+            <span class="item-price">30500ks</span>
+        </div>
+        <button onclick="buy('1100 Gold', '30500ks')">Buy</button>
+    </div>
+
+    <div class="item-card">
+        <div class="item-info">
+            <span class="item-name">2260 Gold</span>
+            <span class="item-price">61000ks</span>
+        </div>
+        <button onclick="buy('2260 Gold', '61000ks')">Buy</button>
+    </div>
+
+    <div class="item-card">
+        <div class="item-info">
+            <span class="item-name">5800 Gold</span>
+            <span class="item-price">150000ks</span>
+        </div>
+        <button onclick="buy('5800 Gold', '150000ks')">Buy</button>
+    </div>
+
+    <h2>🎟️ Special Passes</h2>
+
+    <div class="item-card">
+        <div class="item-info">
+            <span class="item-name">Elite Pass</span>
+            <span class="item-price">15000ks</span>
+        </div>
+        <button onclick="buy('Elite Pass', '15000ks')">Buy</button>
+    </div>
+
+    <div class="item-card">
+        <div class="item-info">
+            <span class="item-name">Premium Pass</span>
+            <span class="item-price">32000ks</span>
+        </div>
+        <button onclick="buy('Premium Pass', '32000ks')">Buy</button>
+    </div>
+
+    <div class="item-card">
+        <div class="item-info">
+            <span class="item-name">Level up Pass</span>
+            <span class="item-price">8000ks</span>
+        </div>
+        <button onclick="buy('Level up Pass', '8000ks')">Buy</button>
+    </div>
+
+    <div class="item-card">
+        <div class="item-info">
+            <span class="item-name">Lucky Bag Week</span>
+            <span class="item-price">4000ks</span>
+        </div>
+        <button onclick="buy('Lucky Bag Week', '4000ks')">Buy</button>
+    </div>
+
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.expand(); // Make the app full height
+
+        function buy(item, price) {
+            // Send data back to the bot
+            const orderData = {
+                product: item,
+                cost: price
+            };
+            tg.sendData(JSON.stringify(orderData));
+            tg.close(); // Close the web app after clicking Buy
+        }
+    </script>
+</body>
+</html>
