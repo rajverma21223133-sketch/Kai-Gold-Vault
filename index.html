@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#09090d">
-  <title>Kai Game Store | Blood Strike Top-Up</title>
+  <title>Kai Game Store | Top-Up Center</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,7 +72,7 @@
       background:
         linear-gradient(180deg, rgba(8,9,13,.28), #0d0e14 98%),
         linear-gradient(115deg, rgba(255,40,65,.23), transparent 55%),
-        url("60572.jpg") center 38% / cover no-repeat;
+        url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800") center 38% / cover no-repeat;
     }
 
     .hero::before {
@@ -156,21 +156,39 @@
       font-size: 11px;
     }
 
-    .hero-tags {
+    /* MENU TABS */
+    .menu-scroll {
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 22px;
+      gap: 10px;
+      padding: 20px 17px 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    
+    .menu-scroll::-webkit-scrollbar {
+      display: none;
     }
 
-    .hero-tags span {
-      padding: 7px 10px;
-      border-radius: 8px;
+    .tab-btn {
+      flex: 0 0 auto;
+      padding: 10px 20px;
+      border-radius: 12px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.045);
-      font-size: 10px;
-      color: #dedee5;
+      background: #171821;
+      color: #9297a7;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .tab-btn.active {
+      border-color: var(--red);
+      background: rgba(255, 53, 77, 0.15);
+      color: #fff;
+      box-shadow: 0 0 15px rgba(255, 53, 77, 0.2);
     }
 
     /* CONTENT */
@@ -178,11 +196,20 @@
       padding: 0 17px 20px;
     }
 
+    .game-section {
+      display: none;
+    }
+
+    .game-section.active {
+      display: block;
+      animation: fadeIn 0.5s ease both;
+    }
+
     .section-heading {
       display: flex;
       align-items: center;
       gap: 11px;
-      margin: 7px 2px 14px;
+      margin: 14px 2px 14px;
     }
 
     .heading-icon {
@@ -261,6 +288,20 @@
       box-shadow: 0 12px 35px rgba(32,227,162,.035);
     }
 
+    /* Sub Category Label for MLBB */
+    .sub-category {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+      margin: 15px 0 8px 5px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    .sub-category:first-child {
+      margin-top: 0;
+    }
+
     .price-row {
       display: flex;
       align-items: center;
@@ -272,7 +313,7 @@
       transition: background .2s, padding .2s;
     }
 
-    .price-row:last-child {
+    .price-row:last-child, .price-row.no-border {
       border-bottom: none;
     }
 
@@ -288,7 +329,7 @@
       align-items: center;
       gap: 9px;
       font-family: "Barlow Condensed", sans-serif;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       letter-spacing: .4px;
       color: #f4f4f7;
@@ -299,6 +340,19 @@
       font-size: 16px;
       filter: drop-shadow(0 0 5px rgba(255,215,106,.4));
     }
+    
+    .uc-icon {
+      color: #20e3a2;
+      font-size: 16px;
+      font-weight: 900;
+      filter: drop-shadow(0 0 5px rgba(32,227,162,.4));
+    }
+    
+    .mlbb-icon {
+      color: #5cf1ff;
+      font-size: 16px;
+      filter: drop-shadow(0 0 5px rgba(92,241,255,.4));
+    }
 
     .price {
       flex-shrink: 0;
@@ -307,7 +361,7 @@
       border-radius: 8px;
       background: rgba(255,255,255,.055);
       font-family: "Barlow Condensed", sans-serif;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 800;
       color: #fff;
       white-space: nowrap;
@@ -355,6 +409,7 @@
       border-radius: 17px;
       border: 1px solid rgba(255,215,106,.18);
       background: linear-gradient(140deg, #1b1920, #111219);
+      margin-top: 10px;
     }
 
     .payment h3 {
@@ -446,12 +501,15 @@
       from { opacity: 0; transform: translateY(12px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    .hero, .section-heading, .price-card, .payment {
-      animation: appear .65s ease both;
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(-10px); }
+      to { opacity: 1; transform: translateX(0); }
     }
 
-    .cheap { animation-delay: .08s; }
+    .hero, .payment {
+      animation: appear .65s ease both;
+    }
     .payment { animation-delay: .15s; }
 
     @media (max-width: 380px) {
@@ -459,17 +517,10 @@
       .hero { padding: 30px 14px 24px; }
       .content { padding: 0 11px 15px; }
       .price-card { padding: 11px; }
-      .gold-amount { font-size: 18px; }
-      .price { font-size: 16px; padding: 7px 8px; }
+      .gold-amount { font-size: 16px; }
+      .price { font-size: 15px; padding: 7px 8px; }
       .heading-text h2 { font-size: 12px; }
       .mini-tag { font-size: 8px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-      }
     }
   </style>
 </head>
@@ -488,128 +539,309 @@
         <span>YOUR TRUSTED TOP-UP</span>
       </h1>
 
-      <div class="game-name">
+      <div class="game-name" id="hero-game-name">
         BLOOD <span>STRIKE</span>
       </div>
 
       <p class="hero-desc">
         မြန်ဆန် • စိတ်ချရ • ဈေးနှုန်းသက်သာ
       </p>
-
-      <div class="hero-tags">
-        <span>⚡ အမြန်ဝန်ဆောင်မှု</span>
-        <span>💎 Gold Top-Up</span>
-        <span>🛡️ ယုံကြည်စိတ်ချရမှု</span>
-      </div>
     </header>
+
+    <!-- ဂိမ်းရွေးချယ်ရန် Menu Tabs -->
+    <div class="menu-scroll">
+      <button class="tab-btn active" onclick="switchGame('blood-strike', 'BLOOD <span>STRIKE</span>', this)">Blood Strike</button>
+      <button class="tab-btn" onclick="switchGame('mlbb', 'MOBILE <span>LEGENDS</span>', this)">Mobile Legends</button>
+      <button class="tab-btn" onclick="switchGame('pubg', 'PUBG <span>MOBILE</span>', this)">PUBG Mobile</button>
+    </div>
 
     <div class="content">
 
-      <!-- FAST DELIVERY -->
-      <section class="fast">
-        <div class="section-heading">
-          <div class="heading-icon">⚡</div>
-          <div class="heading-text">
-            <h2>အမြန်ဆုံး ချက်ချင်းရ</h2>
-            <p>ငွေလွှဲဝင်ပြီး ၂ မိနစ်အတွင်း ဖြည့်ပေးပါမည်</p>
-          </div>
-          <span class="mini-tag">FAST</span>
-        </div>
-
-        <div class="price-card">
-          <div class="price-row">
-            <span class="gold-amount"><span class="diamond">◆</span>56 Gold</span>
-            <span class="price">2,400 Ks</span>
-          </div>
-          <div class="price-row">
-            <span class="gold-amount"><span class="diamond">◆</span>105 Gold</span>
-            <span class="price">4,400 Ks</span>
-          </div>
-          <div class="price-row">
-            <span class="gold-amount"><span class="diamond">◆</span>320 Gold</span>
-            <span class="price">12,700 Ks</span>
-          </div>
-          <div class="price-row">
-            <span class="gold-amount"><span class="diamond">◆</span>540 Gold</span>
-            <span class="price">21,000 Ks</span>
-          </div>
-          <div class="price-row">
-            <span class="gold-amount"><span class="diamond">◆</span>1100 Gold</span>
-            <span class="price">42,000 Ks</span>
-          </div>
-          <div class="price-row">
-            <span class="gold-amount"><span class="diamond">◆</span>2260 Gold</span>
-            <span class="price">83,400 Ks</span>
-          </div>
-          <div class="price-row">
-            <span class="gold-amount"><span class="diamond">◆</span>2486 Gold</span>
-            <span class="price">90,800 Ks</span>
-          </div>
-          
-          <!-- ဝယ်ရန် ခလုတ် -->
-          <a href="https://t.me/luki2122" class="buy-btn" target="_blank" rel="noopener noreferrer">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="22" y1="2" x2="11" y2="13"></line>
-              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-            </svg>
-            Telegram သို့ ဆက်သွယ်ဝယ်ယူရန်
-          </a>
-        </div>
-      </section>
-
-      <!-- CHEAP DELIVERY -->
-      <section class="cheap">
-        <div class="section-heading">
-          <div class="heading-icon">💚</div>
-          <div class="heading-text">
-            <h2>ဈေးအသက်သာဆုံးယူမယ်</h2>
-            <p>ကြာချိန် ၃၅ မိနစ်မှ ၄၅ မိနစ်ခန့်</p>
-          </div>
-          <span class="mini-tag">BEST PRICE</span>
-        </div>
-
-        <div class="price-card">
-          <div class="price-row">
-            <span class="gold-amount"><span class="diamond">◆</span>51 Gold</span>
-            <span class="price">2,000 Ks</span>
-          </div>
-          <div class="price-row">
-            <span class="gold-amount"><span class="diamond">◆</span>105 Gold</span>
-            <span class="price">3,800 Ks</span>
-          </div>
-          <div class="price-row">
-            <span class="gold-amount"><span class="diamond">◆</span>320 Gold</span>
-            <span class="price">11,000 Ks</span>
-          </div>
-          <div class="price-row">
-            <span class="gold-amount"><span class="diamond">◆</span>540 Gold</span>
-            <span class="price">18,400 Ks</span>
-          </div>
-          <div class="price-row">
-            <span class="gold-amount"><span class="diamond">◆</span>1100 Gold</span>
-            <span class="price">36,800 Ks</span>
-          </div>
-          <div class="price-row">
-            <span class="gold-amount"><span class="diamond">◆</span>2260 Gold</span>
-            <span class="price">73,100 Ks</span>
-          </div>
-          <div class="price-row">
-            <span class="gold-amount"><span class="diamond">◆</span>5800 Gold</span>
-            <span class="price">182,000 Ks</span>
+      <!-- ===================================
+           BLOOD STRIKE SECTION
+           =================================== -->
+      <div id="blood-strike" class="game-section active">
+        <!-- FAST DELIVERY -->
+        <section class="fast">
+          <div class="section-heading">
+            <div class="heading-icon">⚡</div>
+            <div class="heading-text">
+              <h2>အမြန်ဆုံး ချက်ချင်းရ</h2>
+              <p>ငွေလွှဲဝင်ပြီး ၂ မိနစ်အတွင်း ဖြည့်ပေးပါမည်</p>
+            </div>
+            <span class="mini-tag">FAST</span>
           </div>
 
-          <!-- ဝယ်ရန် ခလုတ် -->
-          <a href="https://t.me/luki2122" class="buy-btn" target="_blank" rel="noopener noreferrer">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="22" y1="2" x2="11" y2="13"></line>
-              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-            </svg>
-            Telegram သို့ ဆက်သွယ်ဝယ်ယူရန်
-          </a>
-        </div>
-      </section>
+          <div class="price-card">
+            <div class="price-row">
+              <span class="gold-amount"><span class="diamond">◆</span>56 Gold</span>
+              <span class="price">2,400 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="diamond">◆</span>105 Gold</span>
+              <span class="price">4,400 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="diamond">◆</span>116 Gold</span>
+              <span class="price">4,600 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="diamond">◆</span>320 Gold</span>
+              <span class="price">12,700 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="diamond">◆</span>352 Gold</span>
+              <span class="price">13,700 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="diamond">◆</span>540 Gold</span>
+              <span class="price">21,000 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="diamond">◆</span>594 Gold</span>
+              <span class="price">22,700 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="diamond">◆</span>1100 Gold</span>
+              <span class="price">42,000 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="diamond">◆</span>1210 Gold</span>
+              <span class="price">45,400 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="diamond">◆</span>2260 Gold</span>
+              <span class="price">83,400 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="diamond">◆</span>2486 Gold</span>
+              <span class="price">90,800 Ks</span>
+            </div>
+            
+            <a href="https://t.me/luki2122" class="buy-btn" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              Telegram သို့ ဆက်သွယ်ဝယ်ယူရန်
+            </a>
+          </div>
+        </section>
 
-      <!-- PAYMENT DETAILS -->
+        <!-- CHEAP DELIVERY (Placeholder for later) -->
+        <section class="cheap">
+          <div class="section-heading">
+            <div class="heading-icon">💚</div>
+            <div class="heading-text">
+              <h2>ဈေးအသက်သာဆုံးယူမယ်</h2>
+              <p>ကြာချိန် ၄၅ မိနစ်ခန့် စောင့်ရပါမည်</p>
+            </div>
+            <span class="mini-tag">BEST PRICE</span>
+          </div>
+
+          <div class="price-card">
+            <!-- အစ်ကို ပို့ပေးမယ့် ဈေးနှုန်းများကို ဒီနေရာတွင် ဖြည့်ပါမည် -->
+            <p style="text-align: center; color: var(--muted); font-size: 12px; padding: 20px 0;">
+              ဈေးနှုန်းများ မကြာမီ လာမည်...
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- ===================================
+           MOBILE LEGENDS SECTION
+           =================================== -->
+      <div id="mlbb" class="game-section">
+        <section class="fast">
+          <div class="section-heading">
+            <div class="heading-icon">⚡</div>
+            <div class="heading-text">
+              <h2>အမြန်ဆုံး ချက်ချင်းရ (MLBB)</h2>
+              <p>ID ဖြင့် ဖြည့်ပေးပါမည်</p>
+            </div>
+            <span class="mini-tag">FAST</span>
+          </div>
+
+          <div class="price-card">
+            
+            <!-- MLBB Diamonds -->
+            <div class="sub-category">💎 Diamond</div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="mlbb-icon">💎</span>14</span>
+              <span class="price">1,800 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="mlbb-icon">💎</span>28</span>
+              <span class="price">3,600 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="mlbb-icon">💎</span>86</span>
+              <span class="price">6,700 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="mlbb-icon">💎</span>172</span>
+              <span class="price">13,200 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="mlbb-icon">💎</span>257</span>
+              <span class="price">19,200 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="mlbb-icon">💎</span>343</span>
+              <span class="price">25,900 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="mlbb-icon">💎</span>514</span>
+              <span class="price">38,400 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="mlbb-icon">💎</span>600</span>
+              <span class="price">45,100 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="mlbb-icon">💎</span>706</span>
+              <span class="price">51,700 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="mlbb-icon">💎</span>1049</span>
+              <span class="price">77,600 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="mlbb-icon">💎</span>1135</span>
+              <span class="price">84,100 Ks</span>
+            </div>
+            <div class="price-row no-border">
+              <span class="gold-amount"><span class="mlbb-icon">💎</span>1412</span>
+              <span class="price">97,000 Ks</span>
+            </div>
+
+            <!-- MLBB Passes -->
+            <div class="sub-category" style="margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">🎟️ Pass</div>
+            <div class="price-row">
+              <span class="gold-amount">Weekly Pass</span>
+              <span class="price">8,000 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount">Weekly Elite Bundle</span>
+              <span class="price">4,200 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount">Monthly Epic Bundle</span>
+              <span class="price">21,200 Ks</span>
+            </div>
+            <div class="price-row no-border">
+              <span class="gold-amount">Twilight Pass</span>
+              <span class="price">43,200 Ks</span>
+            </div>
+
+            <!-- MLBB Double Diamond -->
+            <div class="sub-category" style="margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">🎁 Double Diamond (Acc တစ်ခုတစ်ခါပဲ)</div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="mlbb-icon">💎</span>50*2</span>
+              <span class="price">4,600 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="mlbb-icon">💎</span>150*2</span>
+              <span class="price">13,800 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="mlbb-icon">💎</span>250*2</span>
+              <span class="price">21,600 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="mlbb-icon">💎</span>500*2</span>
+              <span class="price">42,200 Ks</span>
+            </div>
+            
+            <a href="https://t.me/luki2122" class="buy-btn" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              Telegram သို့ ဆက်သွယ်ဝယ်ယူရန်
+            </a>
+          </div>
+        </section>
+
+        <!-- CHEAP DELIVERY (Placeholder for later) -->
+        <section class="cheap">
+          <div class="section-heading">
+            <div class="heading-icon">💚</div>
+            <div class="heading-text">
+              <h2>ဈေးအသက်သာဆုံးယူမယ်</h2>
+              <p>ကြာချိန် ၄၅ မိနစ်ခန့် စောင့်ရပါမည်</p>
+            </div>
+            <span class="mini-tag">BEST PRICE</span>
+          </div>
+          <div class="price-card">
+            <p style="text-align: center; color: var(--muted); font-size: 12px; padding: 20px 0;">
+              ဈေးနှုန်းများ မကြာမီ လာမည်...
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- ===================================
+           PUBG MOBILE SECTION
+           =================================== -->
+      <div id="pubg" class="game-section">
+        <section class="fast">
+          <div class="section-heading">
+            <div class="heading-icon">⚡</div>
+            <div class="heading-text">
+              <h2>အမြန်ဆုံး ချက်ချင်းရ (PUBG)</h2>
+              <p>Player ID ဖြင့် ဖြည့်ပေးပါမည်</p>
+            </div>
+            <span class="mini-tag">FAST</span>
+          </div>
+
+          <div class="price-card">
+            <div class="price-row">
+              <span class="gold-amount"><span class="uc-icon">🅤</span>60 UC</span>
+              <span class="price">5,200 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="uc-icon">🅤</span>325 UC</span>
+              <span class="price">25,300 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="uc-icon">🅤</span>660 UC</span>
+              <span class="price">50,600 Ks</span>
+            </div>
+            <div class="price-row">
+              <span class="gold-amount"><span class="uc-icon">🅤</span>1800 UC</span>
+              <span class="price">115,000 Ks</span>
+            </div>
+            
+            <a href="https://t.me/luki2122" class="buy-btn" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              Telegram သို့ ဆက်သွယ်ဝယ်ယူရန်
+            </a>
+          </div>
+        </section>
+
+        <!-- CHEAP DELIVERY (Placeholder for later) -->
+        <section class="cheap">
+          <div class="section-heading">
+            <div class="heading-icon">💚</div>
+            <div class="heading-text">
+              <h2>ဈေးအသက်သာဆုံးယူမယ်</h2>
+              <p>ကြာချိန် ၄၅ မိနစ်ခန့် စောင့်ရပါမည်</p>
+            </div>
+            <span class="mini-tag">BEST PRICE</span>
+          </div>
+          <div class="price-card">
+            <p style="text-align: center; color: var(--muted); font-size: 12px; padding: 20px 0;">
+              ဈေးနှုန်းများ မကြာမီ လာမည်...
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- PAYMENT DETAILS (အမြဲပေါ်နေမည်) -->
       <section class="payment">
         <h3>💳 ငွေပေးချေမှု & ဆက်သွယ်ရန်</h3>
         <p class="payment-subtitle">
@@ -645,14 +877,14 @@
           <span>
             ငွေလွှဲပြီးနောက် ငွေလွှဲအထောက်အထားနှင့်
             Game UID ကို Telegram မှတစ်ဆင့် ပေးပို့ပေးပါ။
-            အော်ဒါမတင်မီ Gold အရေအတွက်နှင့် ဈေးနှုန်းကို
+            အော်ဒါမတင်မီ ဂိမ်းအမည်နှင့် ဈေးနှုန်းကို
             သေချာစစ်ဆေးပေးပါ။
           </span>
         </div>
       </section>
 
       <footer class="footer">
-        <strong>KAI GAME STORE</strong>
+        <strong>KAI</strong>
         <p>THANK YOU FOR YOUR SUPPORT ♥</p>
         <p>© 2026 Kai Game Store. All rights reserved.</p>
       </footer>
@@ -661,6 +893,27 @@
   </main>
 
   <script>
+    // Game ပြောင်းရန် Function
+    function switchGame(gameId, heroTitle, btnElement) {
+      // ၁။ Section အားလုံးကို ဖျောက်မယ်
+      const sections = document.querySelectorAll('.game-section');
+      sections.forEach(sec => sec.classList.remove('active'));
+
+      // ၂။ Button အားလုံးကနေ active အရောင်ကို ဖြုတ်မယ်
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      // ၃။ ရွေးလိုက်တဲ့ Section ကိုပဲ ပြန်ပြမယ်
+      document.getElementById(gameId).classList.add('active');
+
+      // ၄။ နှိပ်လိုက်တဲ့ Button ကို active အရောင် ပြောင်းမယ်
+      btnElement.classList.add('active');
+
+      // ၅။ အပေါ်ဆုံးက ခေါင်းစဉ် (Hero text) ကို ဂိမ်းအမည်နဲ့ လိုက်ပြောင်းမယ်
+      document.getElementById('hero-game-name').innerHTML = heroTitle;
+    }
+
+    // Copy လုပ်ရန် Function
     async function copyText(value, button) {
       try {
         if (navigator.clipboard && window.isSecureContext) {
