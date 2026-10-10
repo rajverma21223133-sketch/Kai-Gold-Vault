@@ -1,279 +1,650 @@
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="my">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09090d">
+  <title>&#75;&#97;&#105; &#71;&#97;&#109;&#101; &#83;&#116;&#111;&#114;&#101; &#124; &#66;&#108;&#111;&#111;&#100; &#83;&#116;&#114;&#105;&#107;&#101; &#84;&#111;&#112;&#45;&#85;&#112;</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Noto+Sans+Myanmar:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<title>KAI GAME STORE</title>
+  <style>
+    :root {
+      --bg: #08090d;
+      --panel: #11131a;
+      --red: #ff354d;
+      --gold: #ffd76a;
+      --green: #20e3a2;
+      --muted: #9297a7;
+      --line: rgba(255,255,255,.09);
+    }
 
-<link rel="stylesheet" href="style.css">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    body {
+      min-height: 100vh;
+      padding: 32px 14px;
+      color: #fff;
+      background:
+        radial-gradient(ellipse at 15% 5%, #321018 0, transparent 36%),
+        radial-gradient(ellipse at 90% 70%, #10231f 0, transparent 35%),
+        var(--bg);
+      font-family: "Noto Sans Myanmar", sans-serif;
+    }
 
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .13;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .xc3RvcmU {
+      position: relative;
+      width: 100%;
+      max-width: 510px;
+      margin: auto;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 26px;
+      background: rgba(13,14,20,.96);
+      box-shadow: 0 25px 90px rgba(0,0,0,.65);
+    }
+
+    /* HERO */
+    .xaGVybw {
+      position: relative;
+      isolation: isolate;
+      padding: 36px 22px 28px;
+      text-align: center;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(8,9,13,.28), #0d0e14 98%),
+        linear-gradient(115deg, rgba(255,40,65,.23), transparent 55%),
+        url("60572.jpg") center 38% / cover no-repeat;
+    }
+
+    .xaGVybw::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 240px;
+      height: 240px;
+      left: 50%;
+      top: -150px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: var(--red);
+      filter: blur(100px);
+      opacity: .3;
+    }
+
+    .xdG9wLWx {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 12px;
+      border: 1px solid rgba(255,53,77,.4);
+      border-radius: 100px;
+      background: rgba(255,53,77,.1);
+      color: #ff9aa6;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .xbGl2ZS1 {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 10px var(--green);
+    }
+
+    .xYnJhbmQ {
+      margin-top: 20px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(42px, 10vw, 60px);
+      font-weight: 900;
+      line-height: .95;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, #fff5c6 0%, #ffd45c 42%, #d68a19 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 5px 18px rgba(255,194,49,.14));
+    }
+
+    .xYnJhbmQ span {
+      display: block;
+      margin-top: 8px;
+      font-family: "Noto Sans Myanmar", sans-serif;
+      font-size: 12px;
+      letter-spacing: 5px;
+      color: #fff;
+      -webkit-text-fill-color: #fff;
+    }
+
+    .xZ2FtZS1 {
+      margin-top: 19px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 5px;
+      color: #fff;
+    }
+
+    .xZ2FtZS1 span {
+      color: var(--red);
+    }
+
+    .xaGVyby1 {
+      margin-top: 7px;
+      color: #a6a8b4;
+      font-size: 11px;
+    }
+
+    .xaGVyby1 {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .xaGVyby1 span {
+      padding: 7px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.045);
+      font-size: 10px;
+      color: #dedee5;
+    }
+
+    /* CONTENT */
+    .xY29udGV {
+      padding: 0 17px 20px;
+    }
+
+    .xc2VjdGl {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin: 7px 2px 14px;
+    }
+
+    .xaGVhZGl {
+      display: grid;
+      place-items: center;
+      width: 39px;
+      height: 39px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      font-size: 20px;
+      background: rgba(255,53,77,.12);
+      border: 1px solid rgba(255,53,77,.22);
+    }
+
+    .xY2hlYXA .xaGVhZGl {
+      background: rgba(32,227,162,.09);
+      border-color: rgba(32,227,162,.2);
+    }
+
+    .xaGVhZGl {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .xaGVhZGl h2 {
+      font-family: "Noto Sans Myanmar", sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      color: #ff6578;
+    }
+
+    .xY2hlYXA .xaGVhZGl h2 {
+      color: var(--green);
+    }
+
+    .xaGVhZGl p {
+      margin-top: 5px;
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .xbWluaS1 {
+      align-self: flex-start;
+      white-space: nowrap;
+      padding: 5px 7px;
+      border-radius: 6px;
+      color: #ff8a98;
+      background: rgba(255,53,77,.1);
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    .xY2hlYXA .xbWluaS1 {
+      color: var(--green);
+      background: rgba(32,227,162,.09);
+    }
+
+    .xcHJpY2U {
+      padding: 15px;
+      margin-bottom: 22px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: linear-gradient(145deg, #171821, #101117);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .xZmFzdA .xcHJpY2U {
+      border-top: 2px solid rgba(255,53,77,.7);
+      box-shadow: 0 12px 35px rgba(255,53,77,.055);
+    }
+
+    .xY2hlYXA .xcHJpY2U {
+      border-top: 2px solid rgba(32,227,162,.6);
+      box-shadow: 0 12px 35px rgba(32,227,162,.035);
+    }
+
+    .xcHJpY2U {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      min-height: 47px;
+      padding: 8px 2px;
+      border-bottom: 1px solid rgba(255,255,255,.055);
+      transition: background .2s, padding .2s;
+    }
+
+    .xcHJpY2U:last-child {
+      border-bottom: none;
+    }
+
+    .xcHJpY2U:hover {
+      padding-left: 8px;
+      padding-right: 8px;
+      background: rgba(255,255,255,.035);
+      border-radius: 9px;
+    }
+
+    .xZ29sZC1 {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: .4px;
+      color: #f4f4f7;
+    }
+
+    .xZGlhbW9 {
+      color: var(--gold);
+      font-size: 16px;
+      filter: drop-shadow(0 0 5px rgba(255,215,106,.4));
+    }
+
+    .xcHJpY2U {
+      flex-shrink: 0;
+      padding: 7px 10px;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 8px;
+      background: rgba(255,255,255,.055);
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    .xZmFzdA .xcHJpY2U {
+      color: #ffb5be;
+    }
+
+    .xY2hlYXA .xcHJpY2U {
+      color: #8bf3cd;
+    }
+
+    /* PAYMENT */
+    .xcGF5bWV {
+      position: relative;
+      padding: 18px;
+      overflow: hidden;
+      border-radius: 17px;
+      border: 1px solid rgba(255,215,106,.18);
+      background: linear-gradient(140deg, #1b1920, #111219);
+    }
+
+    .xcGF5bWV h3 {
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .xcGF5bWV {
+      margin-top: 5px;
+      margin-bottom: 15px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .xY29udGF {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .xY29udGF:last-child {
+      border-bottom: 0;
+    }
+
+    .xY29udGF {
+      color: #9699a8;
+      font-size: 11px;
+    }
+
+    .xY29udGF {
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+      text-align: right;
+    }
+
+    .xdGVsZWd {
+      color: #65cfff;
+      text-decoration: none;
+    }
+
+    .xY29weS1 {
+      margin-left: 5px;
+      padding: 5px 7px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #252631;
+      color: #eee;
+      font-family: inherit;
+      font-size: 9px;
+      cursor: pointer;
+    }
+
+    .xY29weS1:hover {
+      border-color: var(--gold);
+    }
+
+    .xbm90aWN {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 10px;
+      background: rgba(255,215,106,.055);
+      color: #c9c4b5;
+      font-size: 10px;
+      line-height: 1.9;
+    }
+
+    .xZm9vdGV {
+      padding: 19px 10px 4px;
+      text-align: center;
+      color: #777987;
+      font-size: 10px;
+      line-height: 2;
+    }
+
+    .xZm9vdGV strong {
+      color: #e4bd5c;
+      letter-spacing: 1px;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero, .section-heading, .price-card, .xcGF5bWV {
+      animation: appear .65s ease both;
+    }
+
+    .xY2hlYXA { animation-delay: .08s; }
+    .xcGF5bWV { animation-delay: .15s; }
+
+    @media (max-width: 380px) {
+      body { padding: 12px 8px; }
+      .xaGVybw { padding: 30px 14px 24px; }
+      .xY29udGV { padding: 0 11px 15px; }
+      .xcHJpY2U { padding: 11px; }
+      .xZ29sZC1 { font-size: 18px; }
+      .xcHJpY2U { font-size: 16px; padding: 7px 8px; }
+      .xaGVhZGl h2 { font-size: 12px; }
+      .xbWluaS1 { font-size: 8px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-<!-- Loading -->
-
-<div id="loader">
-
-<div class="spinner"></div>
-
-<h2>KAI GAME STORE</h2>
-
-</div>
-
-<!-- Header -->
-
-<header>
-
-<div class="logo-box">
-
-<img src="images/logo.jpg">
-
-<div>
-
-<h2>KAI GAME STORE</h2>
-
-<p>Blood Strike Top-up</p>
-
-</div>
-
-</div>
-
-<a href="https://t.me/luki2122" target="_blank">
-
-Telegram
-
-</a>
-
-</header>
-
-<!-- Hero -->
-
-<section class="hero">
-
-<h1>
-
-FAST & SAFE
-
-<br>
-
-TOP-UP
-
-</h1>
-
-<p>
-
-Fast Delivery • Trusted Seller • Best Price
-
-</p>
-
-<button onclick="scrollGold()">
-
-BUY NOW
-
-</button>
-
-</section>
-
-<!-- Gold -->
-
-<section id="gold">
-
-<h2>
-
-Gold Top-up
-
-</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<span>🔥 HOT</span>
-
-<h3>51 Gold</h3>
-
-<h1>2200 Ks</h1>
-
-<button onclick="openPay('51 Gold','2200 Ks')">
-
-Buy Now
-
-</button>
-
-</div>
-
-<div class="card">
-
-<span>⭐ BEST</span>
-
-<h3>105 Gold</h3>
-
-<h1>4300 Ks</h1>
-
-<button onclick="openPay('105 Gold','4300 Ks')">
-
-Buy Now
-
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>320 Gold</h3>
-
-<h1>13000 Ks</h1>
-
-<button onclick="openPay('320 Gold','13000 Ks')">
-
-Buy Now
-
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>540 Gold</h3>
-
-<h1>20000 Ks</h1>
-
-<button onclick="openPay('540 Gold','20000 Ks')">
-
-Buy Now
-
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>1100 Gold</h3>
-
-<h1>41500 Ks</h1>
-
-<button onclick="openPay('1100 Gold','41500 Ks')">
-
-Buy Now
-
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>2260 Gold</h3>
-
-<h1>75000 Ks</h1>
-
-<button onclick="openPay('2260 Gold','75000 Ks')">
-
-Buy Now
-
-</button>
-
-</div>
-
-<div class="card">
-
-<span>VIP</span>
-
-<h3>5800 Gold</h3>
-
-<h1>180000 Ks</h1>
-
-<button onclick="openPay('5800 Gold','180000 Ks')">
-
-Buy Now
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Payment Popup -->
-
-<div id="popup">
-
-<div class="popup-box">
-
-<h2 id="itemName">
-
-105 Gold
-
-</h2>
-
-<h3 id="itemPrice">
-
-4300 Ks
-
-</h3>
-
-<div class="switch">
-
-<button onclick="showKBZ()">
-
-KBZPay
-
-</button>
-
-<button onclick="showWave()">
-
-WavePay
-
-</button>
-
-</div>
-
-<img id="qr"
-
-src="images/kpay.jpg">
-
-<h3>
-
-Ani Thar
-
-</h3>
-
-<p id="phone">
-
-09890522160
-
-</p>
-
-<button onclick="copyNumber()">
-
-Copy Number
-
-</button>
-
-<a href="https://t.me/luki2122">
-
-Send Screenshot
-
-</a>
-
-<button onclick="closePay()">
-
-Close
-
-</button>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
-
+  <main class="xc3RvcmU">
+
+    <header class="xaGVybw">
+      <div class="xdG9wLWx">
+        <span class="xbGl2ZS1"></span>
+        &#80;&#82;&#69;&#77;&#73;&#85;&#77; &#71;&#65;&#77;&#69; &#83;&#84;&#79;&#82;&#69;
+      </div>
+
+      <h1 class="xYnJhbmQ">
+        &#75;&#65;&#73; &#71;&#65;&#77;&#69; &#83;&#84;&#79;&#82;&#69;
+        <span>&#89;&#79;&#85;&#82; &#84;&#82;&#85;&#83;&#84;&#69;&#68; &#84;&#79;&#80;&#45;&#85;&#80;</span>
+      </h1>
+
+      <div class="xZ2FtZS1">
+        &#66;&#76;&#79;&#79;&#68; <span>&#83;&#84;&#82;&#73;&#75;&#69;</span>
+      </div>
+
+      <p class="xaGVyby1">
+        &#4121;&#4156;&#4116;&#4154;&#4102;&#4116;&#4154; &#8226; &#4101;&#4141;&#4112;&#4154;&#4097;&#4155;&#4123; &#8226; &#4104;&#4145;&#4152;&#4116;&#4158;&#4143;&#4116;&#4154;&#4152;&#4126;&#4096;&#4154;&#4126;&#4140;
+      </p>
+
+      <div class="xaGVyby1">
+        <span>&#9889; &#4129;&#4121;&#4156;&#4116;&#4154;&#4125;&#4116;&#4154;&#4102;&#4145;&#4140;&#4100;&#4154;&#4121;&#4158;&#4143;</span>
+        <span>&#128142; &#71;&#111;&#108;&#100; &#84;&#111;&#112;&#45;&#85;&#112;</span>
+        <span>&#128737;&#65039; &#4122;&#4143;&#4150;&#4096;&#4156;&#4106;&#4154;&#4101;&#4141;&#4112;&#4154;&#4097;&#4155;&#4123;&#4121;&#4158;&#4143;</span>
+      </div>
+    </header>
+
+    <div class="xY29udGV">
+
+      <!-- FAST DELIVERY -->
+      <section class="xZmFzdA">
+        <div class="xc2VjdGl">
+          <div class="xaGVhZGl">&#9889;</div>
+          <div class="xaGVhZGl">
+            <h2>&#4129;&#4121;&#4156;&#4116;&#4154;&#4102;&#4143;&#4150;&#4152; &#4097;&#4155;&#4096;&#4154;&#4097;&#4155;&#4100;&#4154;&#4152;&#4123;</h2>
+            <p>&#4100;&#4157;&#4145;&#4124;&#4157;&#4158;&#4146;&#4125;&#4100;&#4154;&#4117;&#4156;&#4142;&#4152; &#4162; &#4121;&#4141;&#4116;&#4101;&#4154;&#4129;&#4112;&#4157;&#4100;&#4154;&#4152; &#4118;&#4156;&#4106;&#4151;&#4154;&#4117;&#4145;&#4152;&#4117;&#4139;&#4121;&#4106;&#4154;</p>
+          </div>
+          <span class="xbWluaS1">&#70;&#65;&#83;&#84;</span>
+        </div>
+
+        <div class="xcHJpY2U">
+          <div class="xcHJpY2U">
+            <span class="xZ29sZC1"><span class="xZGlhbW9">&#9670;</span>&#53;&#54; &#71;&#111;&#108;&#100;</span>
+            <span class="xcHJpY2U">&#50;&#44;&#52;&#48;&#48; &#75;&#115;</span>
+          </div>
+          <div class="xcHJpY2U">
+            <span class="xZ29sZC1"><span class="xZGlhbW9">&#9670;</span>&#49;&#48;&#53; &#71;&#111;&#108;&#100;</span>
+            <span class="xcHJpY2U">&#52;&#44;&#52;&#48;&#48; &#75;&#115;</span>
+          </div>
+          <div class="xcHJpY2U">
+            <span class="xZ29sZC1"><span class="xZGlhbW9">&#9670;</span>&#51;&#50;&#48; &#71;&#111;&#108;&#100;</span>
+            <span class="xcHJpY2U">&#49;&#50;&#44;&#55;&#48;&#48; &#75;&#115;</span>
+          </div>
+          <div class="xcHJpY2U">
+            <span class="xZ29sZC1"><span class="xZGlhbW9">&#9670;</span>&#53;&#52;&#48; &#71;&#111;&#108;&#100;</span>
+            <span class="xcHJpY2U">&#50;&#49;&#44;&#48;&#48;&#48; &#75;&#115;</span>
+          </div>
+          <div class="xcHJpY2U">
+            <span class="xZ29sZC1"><span class="xZGlhbW9">&#9670;</span>&#49;&#49;&#48;&#48; &#71;&#111;&#108;&#100;</span>
+            <span class="xcHJpY2U">&#52;&#50;&#44;&#48;&#48;&#48; &#75;&#115;</span>
+          </div>
+          <div class="xcHJpY2U">
+            <span class="xZ29sZC1"><span class="xZGlhbW9">&#9670;</span>&#50;&#50;&#54;&#48; &#71;&#111;&#108;&#100;</span>
+            <span class="xcHJpY2U">&#56;&#51;&#44;&#52;&#48;&#48; &#75;&#115;</span>
+          </div>
+          <div class="xcHJpY2U">
+            <span class="xZ29sZC1"><span class="xZGlhbW9">&#9670;</span>&#50;&#52;&#56;&#54; &#71;&#111;&#108;&#100;</span>
+            <span class="xcHJpY2U">&#57;&#48;&#44;&#56;&#48;&#48; &#75;&#115;</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHEAP DELIVERY -->
+      <section class="xY2hlYXA">
+        <div class="xc2VjdGl">
+          <div class="xaGVhZGl">&#128154;</div>
+          <div class="xaGVhZGl">
+            <h2>&#4104;&#4145;&#4152;&#4129;&#4126;&#4096;&#4154;&#4126;&#4140;&#4102;&#4143;&#4150;&#4152;&#4122;&#4144;&#4121;&#4122;&#4154;</h2>
+            <p>&#4096;&#4156;&#4140;&#4097;&#4155;&#4141;&#4116;&#4154; &#4163;&#4165; &#4121;&#4141;&#4116;&#4101;&#4154;&#4121;&#4158; &#4164;&#4165; &#4121;&#4141;&#4116;&#4101;&#4154;&#4097;&#4116;&#4151;&#4154;</p>
+          </div>
+          <span class="xbWluaS1">&#66;&#69;&#83;&#84; &#80;&#82;&#73;&#67;&#69;</span>
+        </div>
+
+        <div class="xcHJpY2U">
+          <div class="xcHJpY2U">
+            <span class="xZ29sZC1"><span class="xZGlhbW9">&#9670;</span>&#53;&#49; &#71;&#111;&#108;&#100;</span>
+            <span class="xcHJpY2U">&#50;&#44;&#48;&#48;&#48; &#75;&#115;</span>
+          </div>
+          <div class="xcHJpY2U">
+            <span class="xZ29sZC1"><span class="xZGlhbW9">&#9670;</span>&#49;&#48;&#53; &#71;&#111;&#108;&#100;</span>
+            <span class="xcHJpY2U">&#51;&#44;&#56;&#48;&#48; &#75;&#115;</span>
+          </div>
+          <div class="xcHJpY2U">
+            <span class="xZ29sZC1"><span class="xZGlhbW9">&#9670;</span>&#51;&#50;&#48; &#71;&#111;&#108;&#100;</span>
+            <span class="xcHJpY2U">&#49;&#49;&#44;&#48;&#48;&#48; &#75;&#115;</span>
+          </div>
+          <div class="xcHJpY2U">
+            <span class="xZ29sZC1"><span class="xZGlhbW9">&#9670;</span>&#53;&#52;&#48; &#71;&#111;&#108;&#100;</span>
+            <span class="xcHJpY2U">&#49;&#56;&#44;&#52;&#48;&#48; &#75;&#115;</span>
+          </div>
+          <div class="xcHJpY2U">
+            <span class="xZ29sZC1"><span class="xZGlhbW9">&#9670;</span>&#49;&#49;&#48;&#48; &#71;&#111;&#108;&#100;</span>
+            <span class="xcHJpY2U">&#51;&#54;&#44;&#56;&#48;&#48; &#75;&#115;</span>
+          </div>
+          <div class="xcHJpY2U">
+            <span class="xZ29sZC1"><span class="xZGlhbW9">&#9670;</span>&#50;&#50;&#54;&#48; &#71;&#111;&#108;&#100;</span>
+            <span class="xcHJpY2U">&#55;&#51;&#44;&#49;&#48;&#48; &#75;&#115;</span>
+          </div>
+          <div class="xcHJpY2U">
+            <span class="xZ29sZC1"><span class="xZGlhbW9">&#9670;</span>&#53;&#56;&#48;&#48; &#71;&#111;&#108;&#100;</span>
+            <span class="xcHJpY2U">&#49;&#56;&#50;&#44;&#48;&#48;&#48; &#75;&#115;</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAYMENT DETAILS -->
+      <section class="xcGF5bWV">
+        <h3>&#128179; &#4100;&#4157;&#4145;&#4117;&#4145;&#4152;&#4097;&#4155;&#4145;&#4121;&#4158;&#4143; &#38; &#4102;&#4096;&#4154;&#4126;&#4157;&#4122;&#4154;&#4123;&#4116;&#4154;</h3>
+        <p class="xcGF5bWV">
+          &#4100;&#4157;&#4145;&#4124;&#4157;&#4158;&#4146;&#4117;&#4156;&#4142;&#4152;&#4117;&#4139;&#4096; &#84;&#101;&#108;&#101;&#103;&#114;&#97;&#109; &#4121;&#4158;&#4112;&#4101;&#4154;&#4102;&#4100;&#4151;&#4154; &#4102;&#4096;&#4154;&#4126;&#4157;&#4122;&#4154;&#4117;&#4145;&#4152;&#4117;&#4139;
+        </p>
+
+        <div class="xY29udGF">
+          <span class="xY29udGF">&#87;&#97;&#118;&#101; &#47; &#75;&#80;&#97;&#121;</span>
+          <span class="xY29udGF">
+            &#48;&#57;&#56;&#57;&#48;&#53;&#50;&#50;&#49;&#54;&#48;
+            <button class="xY29weS1" onclick="copyText('09890522160', this)">&#67;&#79;&#80;&#89;</button>
+          </span>
+        </div>
+
+        <div class="xY29udGF">
+          <span class="xY29udGF">&#65;&#99;&#99;&#111;&#117;&#110;&#116; &#78;&#97;&#109;&#101;</span>
+          <span class="xY29udGF">&#65;&#110;&#105; &#84;&#104;&#97;&#114;</span>
+        </div>
+
+        <div class="xY29udGF">
+          <span class="xY29udGF">&#84;&#101;&#108;&#101;&#103;&#114;&#97;&#109;</span>
+          <span class="xY29udGF">
+            <a class="xdGVsZWd"
+               href="https://t.me/luki2122"
+               target="_blank"
+               rel="noopener noreferrer">&#64;&#108;&#117;&#107;&#105;&#50;&#49;&#50;&#50; &#8599;</a>
+            <button class="xY29weS1" onclick="copyText('@luki2122', this)">&#67;&#79;&#80;&#89;</button>
+          </span>
+        </div>
+
+        <div class="xbm90aWN">
+          <span>&#128204;</span>
+          <span>
+            &#4100;&#4157;&#4145;&#4124;&#4157;&#4158;&#4146;&#4117;&#4156;&#4142;&#4152;&#4116;&#4145;&#4140;&#4096;&#4154; &#4100;&#4157;&#4145;&#4124;&#4157;&#4158;&#4146;&#4129;&#4113;&#4145;&#4140;&#4096;&#4154;&#4129;&#4113;&#4140;&#4152;&#4116;&#4158;&#4100;&#4151;&#4154;
+            &#71;&#97;&#109;&#101; &#85;&#73;&#68; &#4096;&#4141;&#4143; &#84;&#101;&#108;&#101;&#103;&#114;&#97;&#109; &#4121;&#4158;&#4112;&#4101;&#4154;&#4102;&#4100;&#4151;&#4154; &#4117;&#4145;&#4152;&#4117;&#4141;&#4143;&#4151;&#4117;&#4145;&#4152;&#4117;&#4139;&#4171;
+            &#4129;&#4145;&#4140;&#4154;&#4114;&#4139;&#4121;&#4112;&#4100;&#4154;&#4121;&#4142; &#71;&#111;&#108;&#100; &#4129;&#4123;&#4145;&#4129;&#4112;&#4157;&#4096;&#4154;&#4116;&#4158;&#4100;&#4151;&#4154; &#4104;&#4145;&#4152;&#4116;&#4158;&#4143;&#4116;&#4154;&#4152;&#4096;&#4141;&#4143;
+            &#4126;&#4145;&#4097;&#4155;&#4140;&#4101;&#4101;&#4154;&#4102;&#4145;&#4152;&#4117;&#4145;&#4152;&#4117;&#4139;&#4171;
+          </span>
+        </div>
+      </section>
+
+      <footer class="xZm9vdGV">
+        <strong>&#75;&#65;&#73; &#71;&#65;&#77;&#69; &#83;&#84;&#79;&#82;&#69;</strong>
+        <p>&#84;&#72;&#65;&#78;&#75; &#89;&#79;&#85; &#70;&#79;&#82; &#89;&#79;&#85;&#82; &#83;&#85;&#80;&#80;&#79;&#82;&#84; &#9829;</p>
+        <p>&#169; &#50;&#48;&#50;&#54; &#75;&#97;&#105; &#71;&#97;&#109;&#101; &#83;&#116;&#111;&#114;&#101;&#46; &#65;&#108;&#108; &#114;&#105;&#103;&#104;&#116;&#115; &#114;&#101;&#115;&#101;&#114;&#118;&#101;&#100;&#46;</p>
+      </footer>
+
+    </div>
+  </main>
+
+  <script>
+    async function copyText(value, button) {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(value);
+        } else {
+          const input = document.createElement("textarea");
+          input.value = value;
+          input.style.position = "fixed";
+          input.style.opacity = "0";
+          document.body.appendChild(input);
+          input.select();
+
+          const copied = document.execCommand("copy");
+          input.remove();
+
+          if (!copied) throw new Error("Copy failed");
+        }
+
+        const original = button.textContent;
+        button.textContent = "COPIED!";
+        setTimeout(() => {
+          button.textContent = original;
+        }, 1500);
+      } catch (error) {
+        window.prompt("Copy this text:", value);
+      }
+    }
+  </script>
 </body>
-
 </html>
